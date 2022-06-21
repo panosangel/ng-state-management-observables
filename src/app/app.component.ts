@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { StoreService } from '../store/store.service';
+import { OrderStoreService } from '../store/order.store';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,12 @@ import { StoreService } from '../store/store.service';
 })
 export class AppComponent implements OnInit {
   constructor(
-    protected store: StoreService,
+    protected orderStore: OrderStoreService,
   ) {
   }
 
   ngOnInit() {
-    this.store.order.updateOrderDetails({
+    this.orderStore.updateOrderDetails({
       id: 'SKU.1234',
       title: 'Brave New World',
       description: 'What a come-back for the Maidens!'
